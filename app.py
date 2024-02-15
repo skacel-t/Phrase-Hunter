@@ -14,6 +14,9 @@ if __name__ == "__main__":
         else:
             if play_again.lower() == "no":
                 playing = False
-            else:
+                print("\nThanks for playing, goodbye!")
+            elif play_again.lower() == "yes":
                 game_instance = game.Game()
                 game_instance.start()
+
+
