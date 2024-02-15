@@ -45,17 +45,16 @@ class Game:
 
                 self.active_phrase.display(self.guesses)
 
-                # check below if phrase is not guessed and have less than 5 misses
+                # check if phrase is not guessed and have less than 5 misses
                 running = not self.active_phrase.check_complete(self.guesses) and self.missed < 5
 
         # if we missed 5 times, print lost statement, otherwise print won statement
         self.game_over(self.missed >= 5)
 
     def get_random_phrase(self):
-        # could also use shuffle and pop() if I don't want repeats
+        # could also use shuffle and pop() if I don't want phrases to repeat
         return random.choice(self.phrases)
 
-    # if letter has already been guessed, bring up exception
     def get_guess(self):
         user_guess = input("Guess a letter:  ")
         user_guess = user_guess.lower()
